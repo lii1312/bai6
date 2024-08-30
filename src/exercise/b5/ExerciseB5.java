@@ -1,6 +1,7 @@
 
 package exercise.b5;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ExerciseB5 {
@@ -42,21 +43,21 @@ public class ExerciseB5 {
         return max2;
     }
     // câu 4 
-    public static float[] deleteOddNumber(float[] arrays){
-        int count = 0;
+    public static void deleteOddNumber(float[ ] arrays) {
+        int cout=0;
         for(float value:arrays){
             if(value%2==0){
-                count++;
+                cout++;
             }
         }
-        float[] result = new float[count];
-        int index = 0;
+        float []pus=new float[cout];
+        int index=0;
         for(float value:arrays){
             if(value%2==0){
-                result[index++] = value;
+                pus[index++]=value;
             }
         }
-        return result;
+        System.out.println("xoa phan tu le trong mang:"+Arrays.toString(pus));
     }
        // gọi các phương tức main 
        public static void main(String[] args) {
@@ -76,9 +77,7 @@ public class ExerciseB5 {
         if(!Float.isNaN(max2)) // kiểm tra xem nếu là nan thì true , ngược lại thì flase
         System.out.println("gia tri lon thu hai trong mang: "+max2);
         // câu 4
-        float[] evenarray = deleteOddNumber(arrays);
-           System.out.println("mang sau khi xoa phan tu le la ");
-           printData(evenarray); 
+           deleteOddNumber(arrays);
     }
     
 }
